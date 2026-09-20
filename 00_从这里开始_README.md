@@ -10,7 +10,7 @@
 
 1. **安装三个 skill**：把 `skill快照/` 下三个子目录整体拷到 `~/.agents/skills/`（或你的 agent 平台的 skill 目录）。快照与活体 skill 完整一致（含全部脚本），拷完即可用。
 2. **装依赖**：REAPER（开 Distant API）+ `pip install reapy_boost` + ffmpeg，详见 02 号。
-3. **音源库**：`scripts/pipeline/asset_library.db` 开箱即用；音源盘路径不同则按 04 号「路径问题」批量替换前缀或重建索引。
+3. **音源库（双版本，2026-09-20 起）**：音源在本地 `D:\音效文件\` 的机器用 `scripts/pipeline/asset_library.db`（61,397 条，path 前缀本机）；音源挂 NAS `\\192.168.9.251\音效2\资源库` 的机器直接用 **NAS 版** `scripts/pipeline/asset_library_nas.db`（60,871 条，path 即 NAS 绝对路径，零本地依赖；同 sha1 副本在 NAS `资源库\_索引\`）。两处都无音源才按 04 号「路径问题」重建索引。首次开工先做一次性音源库配置（04 号「新机首次引导」节）。
 
 ## 阅读顺序（按此依次读完再动手）
 
@@ -39,7 +39,7 @@
 │   ├── video-action-analysis/      ← 上游逐秒报告生成规范 + 出厂门禁
 │   └── reaper-remote-ops/          ← Python 驱动 REAPER 操作手册（动手前先读）
 ├── scripts/
-│   ├── pipeline/             ← 检索引擎全套源码 + 音源库 DB（61,347 条索引）
+│   ├── pipeline/             ← 检索引擎全套源码 + 音源库 DB 双版本（本机版 61,397 条 / NAS 版 60,871 条）
 │   └── 示例与工具/           ← 真实用过的贴轨/导出/审计/Region 脚本（当模板抄）
 └── assets/                   ← 项目侧数据样例（region_bases CSV 由 extract_regions.py 生成）
 ```

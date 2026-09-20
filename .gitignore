@@ -6,4 +6,4 @@ __pycache__/
 Thumbs.db
 .DS_Store
 desktop.ini
-# 注：asset_library.db(45M) 与 library_index.json(19M) 为核心资产，必须入库
+# 注：asset_library.db(45M)、asset_library_nas.db(46M) 与 library_index.json(19M) 为核心资产，必须入库

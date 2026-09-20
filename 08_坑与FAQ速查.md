@@ -61,6 +61,7 @@
 |------|------|
 | python `os.remove` 被拦（SAFE_DELETE_FAIL_CLOSED） | 脚本内不删文件，改用外部 shell 命令 `rm` |
 | DB 报 `no such module: fts5` | 换 Python 版本（官方编译版自带 FTS5） |
+| bash 里 `python -c` 内联传 UNC/NAS 路径 | 内联反斜杠转义 + SMB 组合下**静默失败**：os.walk 返回 0 文件、exists 恒 False，但不报任何错（2026-09-20 实测，同命令写进 .py 文件即正常） | 访问 NAS 一律先写临时 .py 脚本文件再执行，禁止 `python -c` 内联传 UNC 路径 |
 
 ## 工作流类
 
