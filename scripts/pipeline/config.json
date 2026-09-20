@@ -1,0 +1,328 @@
+{
+  "_note": "AI 驱动 DAW 影视音频工作流配置。NAS 路径只读，仅索引不改。把 library.roots 换成你的真实音效库路径。",
+  "library": {
+    "roots": [
+      "D:/音效文件/Boom Library",
+      "D:/音效文件/Sound Morph/(爆炸坍塌)SoundMorph - Matter Mayhem",
+      "D:/音效文件/Sound Morph/33 Sound Morph - Robotic Lifeforms 2【机器人变形金刚机械生命体音效-第2辑】/SoundMorph - Robotic Lifeforms 2"
+    ],
+    "theme_roots": {
+      "中国风": [
+        "D:/音效文件/加花音效《武器》",
+        "D:/音效文件/设计音效 《剑魂》",
+        "D:/音效文件/设计音效 《法术》",
+        "D:/音效文件/设计音效《剑心》",
+        "D:/音效文件/设计音效《剑气》",
+        "D:/音效文件/设计音效《暗器》",
+        "D:/音效文件/设计音效《水之魂》",
+        "D:/音效文件/设计音效《法术》二",
+        "D:/音效文件/设计音效《玄幻法器》",
+        "D:/音效文件/设计音效《突变》",
+        "D:/音效文件/设计音效《诡异》"
+      ]
+    },
+    "use_nas_readonly": false,
+    "action_packs": {
+      "衣物": [
+        "close combat bundle"
+      ],
+      "cloth": [
+        "close combat bundle"
+      ],
+      "fabric": [
+        "close combat bundle"
+      ],
+      "sleeve": [
+        "close combat bundle"
+      ],
+      "打": [
+        "close combat bundle"
+      ],
+      "拳": [
+        "close combat bundle"
+      ],
+      "踢": [
+        "close combat bundle"
+      ],
+      "斗": [
+        "close combat bundle"
+      ],
+      "punch": [
+        "close combat bundle"
+      ],
+      "kick": [
+        "close combat bundle"
+      ],
+      "转身": [
+        "close combat bundle"
+      ],
+      "抬手": [
+        "close combat bundle"
+      ],
+      "挥手": [
+        "close combat bundle"
+      ],
+      "挥": [
+        "close combat bundle"
+      ],
+      "跪": [
+        "close combat bundle"
+      ],
+      "起身": [
+        "close combat bundle"
+      ],
+      "站": [
+        "close combat bundle"
+      ],
+      "架": [
+        "close combat bundle"
+      ],
+      "拖": [
+        "close combat bundle"
+      ],
+      "抓": [
+        "close combat bundle"
+      ],
+      "握": [
+        "close combat bundle"
+      ],
+      "身体": [
+        "close combat bundle"
+      ],
+      "body": [
+        "close combat bundle"
+      ],
+      "impact": [
+        "close combat bundle"
+      ],
+      "落地": [
+        "close combat bundle"
+      ],
+      "掉": [
+        "close combat bundle"
+      ],
+      "扔": [
+        "close combat bundle"
+      ],
+      "抛": [
+        "close combat bundle"
+      ],
+      "throw": [
+        "close combat bundle"
+      ],
+      "拍手": [
+        "close combat bundle"
+      ],
+      "clap": [
+        "close combat bundle"
+      ],
+      "slap": [
+        "close combat bundle"
+      ],
+      "鼓掌": [
+        "close combat bundle"
+      ],
+      "摔": [
+        "close combat bundle"
+      ],
+      "撞": [
+        "close combat bundle"
+      ],
+      "拉": [
+        "close combat bundle"
+      ],
+      "拽": [
+        "close combat bundle"
+      ],
+      "推": [
+        "close combat bundle"
+      ],
+      "扛": [
+        "close combat bundle"
+      ],
+      "抱": [
+        "close combat bundle"
+      ],
+      "背": [
+        "close combat bundle"
+      ],
+      "提": [
+        "close combat bundle"
+      ],
+      "捡": [
+        "close combat bundle"
+      ],
+      "甩": [
+        "close combat bundle"
+      ],
+      "踹": [
+        "close combat bundle"
+      ],
+      "蹲": [
+        "close combat bundle"
+      ],
+      "弯腰": [
+        "close combat bundle"
+      ],
+      "俯身": [
+        "close combat bundle"
+      ],
+      "挣扎": [
+        "close combat bundle"
+      ],
+      "打斗": [
+        "close combat bundle"
+      ],
+      "fight": [
+        "close combat bundle"
+      ],
+      "combat": [
+        "close combat bundle"
+      ],
+      "grab": [
+        "close combat bundle"
+      ],
+      "grasp": [
+        "close combat bundle"
+      ],
+      "pull": [
+        "close combat bundle"
+      ],
+      "push": [
+        "close combat bundle"
+      ],
+      "lift": [
+        "close combat bundle"
+      ],
+      "carry": [
+        "close combat bundle"
+      ],
+      "struggle": [
+        "close combat bundle"
+      ],
+      "hit": [
+        "close combat bundle"
+      ],
+      "beat": [
+        "close combat bundle"
+      ],
+      "strike": [
+        "close combat bundle"
+      ],
+      "fall": [
+        "close combat bundle"
+      ],
+      "footstep": [
+        "virtual foley artist - footsteps"
+      ],
+      "footsteps": [
+        "virtual foley artist - footsteps"
+      ],
+      "step": [
+        "virtual foley artist - footsteps"
+      ],
+      "walk": [
+        "virtual foley artist - footsteps"
+      ],
+      "running": [
+        "virtual foley artist - footsteps"
+      ],
+      "奔跑": [
+        "virtual foley artist - footsteps"
+      ],
+      "散步": [
+        "virtual foley artist - footsteps"
+      ],
+      "门": [
+        "boom library doors"
+      ],
+      "door": [
+        "boom library doors"
+      ],
+      "落水": [
+        "cinematic elements - fire & water ds",
+        "cinematic elements - fire & water ck"
+      ],
+      "splash": [
+        "cinematic elements - fire & water ds",
+        "cinematic elements - fire & water ck"
+      ],
+      "water": [
+        "cinematic elements - fire & water ds",
+        "cinematic elements - fire & water ck"
+      ],
+      "入水": [
+        "cinematic elements - fire & water ds",
+        "cinematic elements - fire & water ck"
+      ],
+      "游泳": [
+        "cinematic elements - fire & water ds",
+        "cinematic elements - fire & water ck"
+      ],
+      "潜水": [
+        "cinematic elements - fire & water ds",
+        "cinematic elements - fire & water ck"
+      ],
+      "dive": [
+        "cinematic elements - fire & water ds",
+        "cinematic elements - fire & water ck"
+      ],
+      "swim": [
+        "cinematic elements - fire & water ds",
+        "cinematic elements - fire & water ck"
+      ],
+      "爆炸": [
+        "matter mayhem"
+      ],
+      "blast": [
+        "matter mayhem"
+      ],
+      "坍塌": [
+        "matter mayhem"
+      ],
+      "explosion": [
+        "matter mayhem"
+      ],
+      "collapse": [
+        "matter mayhem"
+      ],
+      "亲吻": [
+        "toons"
+      ],
+      "kiss": [
+        "toons"
+      ]
+    },
+    "low_priority_categories": [
+      "01.【枪战机枪音效】",
+      "02.【猛禽类】",
+      "03.【金属 撞击】",
+      "12.【烟火 火炮 火枪】",
+      "17.【山谷 回声】",
+      "33.【地下环境】",
+      "43.【霓虹 氛围】"
+    ]
+  },
+  "index": {
+    "out": "index/library_index.json",
+    "embeddings": "index/embeddings.npz",
+    "build_embeddings": false
+  },
+  "embedder": {
+    "mode": "none",
+    "model": "BAAI/bge-small-zh-v1.5",
+    "ollama_url": "http://localhost:11434/api/embeddings"
+  },
+  "retrieval": {
+    "top_k": 8,
+    "keyword_weight": 0.5,
+    "vector_weight": 0.5,
+    "expand_model": "qwen-plus"
+  },
+  "reaper": {
+    "host": "127.0.0.1",
+    "port": 2308,
+    "project": "",
+    "media_track": 1
+  }
+}

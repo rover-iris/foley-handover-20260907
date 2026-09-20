@@ -1,0 +1,9 @@
+# Python 运行残渣
+__pycache__/
+*.pyc
+*.pyo
+# 系统文件
+Thumbs.db
+.DS_Store
+desktop.ini
+# 注：asset_library.db(45M) 与 library_index.json(19M) 为核心资产，必须入库
