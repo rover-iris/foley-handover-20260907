@@ -94,15 +94,15 @@ def expand_query(query: str) -> tuple[list[str], list[str]]:
         ],
         "temperature": 0.2,
     }
-    req = urllib.request.Request(
-        CHAT_URL,
-        data=json.dumps(body).encode(),
-        headers={
-            "Authorization": f"Bearer {_api_key()}",
-            "Content-Type": "application/json",
-        },
-    )
     try:
+        req = urllib.request.Request(
+            CHAT_URL,
+            data=json.dumps(body).encode(),
+            headers={
+                "Authorization": f"Bearer {_api_key()}",
+                "Content-Type": "application/json",
+            },
+        )
         with urllib.request.urlopen(req, timeout=30) as r:
             resp = json.loads(r.read().decode())
         content = resp["choices"][0]["message"]["content"]
@@ -404,10 +404,15 @@ def search(db_path: str, query: str, top_k: int = 8, debug: bool = False, scene_
 if __name__ == "__main__":
     import sys
 
-    # 资产表优先取脚本同目录（本包布局），回落原机 index/ 子目录布局
-    _db = BASE_DIR / "asset_library.db"
-    if not _db.exists():
-        _db = BASE_DIR / "index" / "asset_library.db"
+    # 资产表按布局回退（CLI 直跑找库）：本包 pipeline\ 平铺 → NAS _索引\ 分发
+    # （NAS 版 db 与引擎同目录）→ 工程侧 scripts\ 旁的 assets\ → 原机 index\ 子目录
+    candidates = [
+        BASE_DIR / "asset_library.db",
+        BASE_DIR / "asset_library_nas.db",
+        BASE_DIR.parent / "assets" / "asset_library_nas.db",
+        BASE_DIR / "index" / "asset_library.db",
+    ]
+    _db = next((p for p in candidates if p.exists()), candidates[0])
     db = str(_db)
     for q in sys.argv[1:] or ["sea"]:
         print(f"== 查询: {q} ==")
