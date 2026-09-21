@@ -13,7 +13,7 @@ time.sleep(1)
 
 OUT = r"C:\Users\Administrator\Desktop\3D颠佬-分轨导出_48k24b"
 os.makedirs(OUT, exist_ok=True)
-states = json.load(open(r"C:/Users/Administrator/Workspace/2026-08-24-10-46-09/check/fader_backup_20260831.json"))
+states = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "fader_backup_20260831.json")))  # 样本就在本目录
 EXPECT = 919_000_000  # 3197s * 288000B/s ≈ 920.7MB，留余量
 
 # 清掉 v3 的残件

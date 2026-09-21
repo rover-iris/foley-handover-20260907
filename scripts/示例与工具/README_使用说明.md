@@ -18,6 +18,8 @@
 | insert_video_权臣CP01_20260910.py | 老的单条视频插入脚本。**现役路线**：视频+Region 走 `skill快照/reaper-foley-workflow/scripts/make_video_driver.py`（Lua 驱动定稿）；API 直贴后的 Region 补建用本目录 create_video_regions.py |
 | fader_backup_20260831.json | 50 轨推子状态备份样本（改推子前先存 JSON 的格式参考） |
 
+> 20260921：以上历史脚本内的原机个人工作区绝对路径已改为相对本包路径或占位符，脚本逻辑未动。
+
 ## 铁律提醒（20260916 版，详见 04/05 号文档）
 
 1. 音量一律默认 1.0，任何 vol 经验值（0.5~0.8 / 0.3~0.5）均为废止值。

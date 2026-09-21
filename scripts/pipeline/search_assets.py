@@ -7,6 +7,7 @@
 from __future__ import annotations
 
 import json
+import os
 import random
 import re
 import sqlite3
@@ -68,8 +69,19 @@ class AssetHit:
 
 
 def _api_key() -> str:
-    cfg = json.loads((Path.home() / ".workspace" / "app-config.json").read_text(encoding="utf-8"))
-    return cfg["dashscope_api_key"]
+    """取 DashScope key：环境变量 DASHSCOPE_API_KEY 优先，其次本目录 config.json 的 retrieval.api_key。
+    都取不到时抛异常——expand_query 会捕获并降级为原词拆分，检索仍可用（无同义词扩展）。"""
+    env = os.environ.get("DASHSCOPE_API_KEY")
+    if env:
+        return env
+    try:
+        cfg = json.loads((BASE_DIR / "config.json").read_text(encoding="utf-8"))
+        key = cfg.get("retrieval", {}).get("api_key")
+        if key:
+            return key
+    except Exception:  # noqa: BLE001
+        pass
+    raise RuntimeError("未配置 DashScope key：设环境变量 DASHSCOPE_API_KEY，或在 config.json 的 retrieval.api_key 填入")
 
 
 def expand_query(query: str) -> tuple[list[str], list[str]]:
@@ -392,7 +404,11 @@ def search(db_path: str, query: str, top_k: int = 8, debug: bool = False, scene_
 if __name__ == "__main__":
     import sys
 
-    db = str(BASE_DIR / "index" / "asset_library.db")
+    # 资产表优先取脚本同目录（本包布局），回落原机 index/ 子目录布局
+    _db = BASE_DIR / "asset_library.db"
+    if not _db.exists():
+        _db = BASE_DIR / "index" / "asset_library.db"
+    db = str(_db)
     for q in sys.argv[1:] or ["sea"]:
         print(f"== 查询: {q} ==")
         for h in search(db, q, top_k=5, debug=True):

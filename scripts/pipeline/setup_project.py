@@ -27,7 +27,9 @@ def wait_ready(retries: int = 12, delay: int = 3):
 
 
 def main():
-    video = sys.argv[1] if len(sys.argv) > 1 else r"D:\视频\测试片\02.mp4"
+    if len(sys.argv) < 2:
+        raise SystemExit("用法: python setup_project.py <video_path>")
+    video = sys.argv[1]
     reapy = wait_ready()
     proj = reapy.Project()
     RPR = reapy.reascript_api

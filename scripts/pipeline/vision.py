@@ -17,7 +17,6 @@ import sys
 import urllib.request
 from pathlib import Path
 
-CONFIG = Path.home() / ".workspace" / "app-config.json"
 MODEL = os.environ.get("VL_MODEL", "qwen-vl-plus")
 FPS_DEFAULT = 1.0
 
@@ -29,8 +28,10 @@ PROMPT = """你是影视声音设计师的助手，负责从画面帧中识别�
 
 
 def _api_key() -> str:
-    d = json.loads(CONFIG.read_text(encoding="utf-8"))
-    return d["dashscope_api_key"]
+    key = os.environ.get("DASHSCOPE_API_KEY")
+    if not key:
+        raise RuntimeError("请先设置环境变量 DASHSCOPE_API_KEY")
+    return key
 
 
 def extract_frames(video: str, fps: float = FPS_DEFAULT, out_dir: str = "frames"):

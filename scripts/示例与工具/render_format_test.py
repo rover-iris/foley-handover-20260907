@@ -10,7 +10,7 @@ RPR = reapy_boost.reascript_api
 p = reapy_boost.Project()
 time.sleep(1)
 
-TMP = r"C:\Users\Administrator\Workspace\2026-08-24-10-46-09\check\fmt_test"
+TMP = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fmt_test")  # 输出落本目录
 os.makedirs(TMP, exist_ok=True)
 ffprobe = r"C:\Users\Administrator\ffmpeg\ffprobe.exe"
 

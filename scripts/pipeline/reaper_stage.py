@@ -1,7 +1,7 @@
 """Reaper 自动布置骨架 (阶段 6)。
 
 依赖：本机 Reaper 运行中 + reapy_boost 扩展 + Distant API 已启用（见 setup_reaper.py）。
-先 reapy 直连把最小骨架跑通；稳定后包成 REAPER MCP 给 AI 助手 在 Workspace 里直接调。
+定位：reapy 直连的最小布置骨架（cue 区域级贴音效的底层操作封装）。
 
 cue 区域级贴音效：用 take.start_offset 跳过文件前段，item.length 裁到 cue 长度，
 实现「单文件多音效，只取其中一段」。

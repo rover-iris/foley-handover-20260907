@@ -4,13 +4,13 @@ import time, sys, sqlite3, os
 from ipaddress import IPv4Address
 import reapy_boost
 from reapy_boost.tools.network.machines import Host
-sys.path.insert(0, r"C:/Users/Administrator/Workspace/2026-08-21-14-44-13/reaper-foley-pipeline")
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "pipeline"))  # 指向本包 pipeline
 
 reapy_boost.connect(Host(IPv4Address("127.0.0.1")))
 RPR = reapy_boost.reascript_api
 p = reapy_boost.Project()
 time.sleep(1)
-db = sqlite3.connect(r"C:/Users/Administrator/Workspace/2026-08-21-14-44-13/reaper-foley-pipeline/index/asset_library.db")
+db = sqlite3.connect(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "pipeline", "asset_library.db"))
 
 def q(name):
     r = db.execute("SELECT path FROM assets WHERE name=? LIMIT 1", (name,)).fetchone()

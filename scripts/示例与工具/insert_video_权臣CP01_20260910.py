@@ -11,7 +11,7 @@ from reapy_boost.tools.network.machines import Host
 for _k in ("http_proxy", "https_proxy", "HTTP_PROXY", "HTTPS_PROXY", "all_proxy", "ALL_PROXY"):
     os.environ.pop(_k, None)
 
-VID = r"D:\视频\仿真人-权臣与我组cp\1.mp4"
+VID = r"D:\视频\仿真人-权臣与我组cp\1.mp4"  # 历史实例路径，复用时替换为实际视频
 VLEN = 48.533333
 PROJ_PATH = r"D:\reaper工程\权臣CP01_贴轨测试_20260910\权臣CP01_贴轨测试.rpp"
 assert os.path.exists(VID), "视频文件不存在"

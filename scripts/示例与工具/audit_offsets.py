@@ -9,7 +9,7 @@ reapy_boost.connect(Host(IPv4Address("127.0.0.1")))
 RPR = reapy_boost.reascript_api
 p = reapy_boost.Project()
 time.sleep(1)
-db = sqlite3.connect(r"C:/Users/Administrator/Workspace/2026-08-21-14-44-13/reaper-foley-pipeline/index/asset_library.db")
+db = sqlite3.connect(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "pipeline", "asset_library.db"))  # 相对本文件指向本包 pipeline
 dur = dict(db.execute("SELECT path, duration FROM assets").fetchall())
 # 文件名 -> 源长（可能同名不同目录，取最大时长近似）
 by_fn = {}
