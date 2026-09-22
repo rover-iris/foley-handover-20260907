@@ -14,14 +14,14 @@ import reapy_boost
 from reapy_boost.tools.network.machines import Host
 for _k in ("http_proxy", "https_proxy", "HTTP_PROXY", "HTTPS_PROXY", "all_proxy", "ALL_PROXY"):
     os.environ.pop(_k, None)
-sys.path.insert(0, r"C:/Users/Administrator/Desktop/音效工作流交接包_20260907/scripts/pipeline")
+sys.path.insert(0, r"C:/Users/Administrator/Desktop/音效工作流交接包_20260922/scripts/pipeline")
 
 reapy_boost.connect(Host(IPv4Address("127.0.0.1")))
 RPR = reapy_boost.reascript_api
 p = reapy_boost.Project()
 time.sleep(1)
 assert hasattr(RPR, "AddMediaItemToTrack"), "reascript_api 未就绪"
-db = sqlite3.connect(r"C:/Users/Administrator/Desktop/音效工作流交接包_20260907/scripts/pipeline/asset_library.db")
+db = sqlite3.connect(r"C:/Users/Administrator/Desktop/音效工作流交接包_20260922/scripts/pipeline/asset_library.db")
 
 def q(name):
     r = db.execute("SELECT path FROM assets WHERE name=? LIMIT 1", (name,)).fetchone()
