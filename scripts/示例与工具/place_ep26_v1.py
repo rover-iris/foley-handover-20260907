@@ -90,6 +90,7 @@ def put(ti, t_local, src, ln, label, fade=None, off=None, vol=None, fadein=None)
     if fade: RPR.SetMediaItemInfo_Value(item_id, "D_FADEOUTLEN", fade)
     if fadein: RPR.SetMediaItemInfo_Value(item_id, "D_FADEINLEN", fadein)
     RPR.SetMediaItemInfo_Value(item_id, "D_VOL", 1.0)  # 2026-09-11 制作人口径：一律默认音量
+    RPR.GetSetMediaItemTakeInfo_String(take_id, "P_NAME", os.path.splitext(os.path.basename(src))[0], True)  # 条目名=源文件名 stem（04号文档口径；不设则画面里 item 无标签）
     # ⚠️ 旧版此处为 `if vol: ...D_VOL", vol)`（vol 列真值生效），20260916 因照抄致 531 条被调量返工，已中和。
     # CUES 里的 vol 字段仅为兼容保留，落地一律强制 1.0。
     # 立即验证源
